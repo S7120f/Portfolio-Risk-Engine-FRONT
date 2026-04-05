@@ -1,0 +1,43 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.section {
+  margin-top: 24px;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.simple-table th,
+.simple-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}

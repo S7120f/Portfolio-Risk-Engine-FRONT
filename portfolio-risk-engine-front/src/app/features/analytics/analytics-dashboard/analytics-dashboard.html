@@ -1,0 +1,69 @@
+<h1 *ngIf="volatility">Analys - {{ volatility.portfolioName }}</h1>
+
+<div class="stats-grid" *ngIf="volatility && drawdown">
+  <div class="stat-card">
+    <div class="label">Totalt värde</div>
+    <div class="value">{{ formatNumber(volatility.totalValue) }}</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="label">Portfölj Volatilitet</div>
+    <div class="value">{{ formatPercent(volatility.portfolioVolatility) }}</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="label">Max Drawdown</div>
+    <div class="value">{{ formatPercent(drawdown.maxDrawdown) }}</div>
+  </div>
+</div>
+
+<div class="section" *ngIf="volatility">
+  <h2>Holdings</h2>
+  <table class="simple-table">
+    <thead>
+    <tr>
+      <th>Ticker</th>
+      <th>Typ</th>
+      <th>Antal</th>
+      <th>Senate Pris</th>
+      <th>Marknadsvärde</th>
+      <th>Portföljvikt</th>
+      <th>tillgångsvolatilitet</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let holding of volatility.holdings">
+      <td>{{ holding.ticker }}</td>
+      <td>{{ holding.assetType }}</td>
+      <td>{{ holding.quantity }}</td>
+      <td>{{ formatNumber(holding.latestPrice) }}</td>
+      <td>{{ formatNumber(holding.marketValue) }}</td>
+      <td>{{ formatPercent(holding.weight) }}</td>
+      <td>{{ formatPercent(holding.assetVolatility) }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" *ngIf="correlation">
+  <h2>Korrelation</h2>
+  <table class="simple-table">
+    <thead>
+    <tr>
+      <th>Ticker A</th>
+      <th>Ticker B</th>
+      <th>Korrelation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of correlation.correlations">
+      <td>{{ item.tickerA }}</td>
+      <td>{{ item.tickerB }}</td>
+      <td>{{ item.correlation }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

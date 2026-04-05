@@ -1,0 +1,17 @@
+<h1>Portföljer</h1>
+
+<div *ngIf="portfolios.length === 0">
+  <p>Inga portföljer hittades.</p>
+</div>
+
+<div class="grid" *ngIf="portfolios.length > 0">
+  <mat-card *ngFor="let portfolio of portfolios" class="card">
+    <h3>{{ portfolio.name }}</h3>
+
+    <div class="actions">
+      <button mat-button>Öppna</button>
+      <button mat-button color="primary" (click)="openAnalytics(portfolio.id)">Analysera</button>
+    </div>
+  </mat-card>
+</div>
+
