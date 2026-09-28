@@ -6,6 +6,10 @@ A modern Angular frontend for the Portfolio Risk Engine. This application provid
 
 This project is the frontend layer of a portfolio analysis system. It connects to the backend API and presents portfolio information, asset data, and related calculations in a browser-based interface.
 
+This frontend is designed to work together with the backend repository:
+
+- Backend repo: https://github.com/S7120f/Portfolio-Risk-Engine-API
+
 ## Tech Stack
 
 - Angular 21
@@ -42,8 +46,25 @@ Before running the app, make sure you have:
 - Node.js 18+
 - npm
 - Angular CLI (optional, but useful for local development)
+- The backend project running locally
 
-## Getting Started
+## Backend Setup
+
+The frontend depends on the backend API from the repository below:
+
+```bash
+git clone https://github.com/S7120f/Portfolio-Risk-Engine-API.git
+cd Portfolio-Risk-Engine-API
+./mvnw spring-boot:run
+```
+
+The backend usually runs on:
+
+```text
+http://localhost:8080
+```
+
+## Frontend Setup
 
 ### 1. Open the frontend app folder
 
@@ -101,6 +122,11 @@ The frontend is designed to give users a clean and interactive view of portfolio
 ## Notes
 
 This repository contains the frontend portion of the larger Portfolio Risk Engine system. The backend API and data services are expected to be connected separately.
+
+The full application consists of:
+
+- Frontend: https://github.com/S7120f/Portfolio-Risk-Engine-FRONT
+- Backend: https://github.com/S7120f/Portfolio-Risk-Engine-API
 
 ## License
 
