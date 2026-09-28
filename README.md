@@ -127,7 +127,3 @@ The full application consists of:
 
 - Frontend: https://github.com/S7120f/Portfolio-Risk-Engine-FRONT
 - Backend: https://github.com/S7120f/Portfolio-Risk-Engine-API
-
-## License
-
-This project is available under the standard repository license configuration.
